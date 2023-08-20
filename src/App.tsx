@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import {
+  Redirect,
+  Route,
+  BrowserRouter as Router,
+  Switch
+} from 'react-router-dom'
+import { QueryParamProvider } from 'use-query-params'
+import './App.css'
+import { Header } from './components/header/header'
+import { QueryParamsAdapter } from './components/query-params-adapter/query-params-adapter'
+import { DetailedProduct } from './pages/detailed-product/detailed-product'
+import { Items } from './pages/items/items'
+
+const queryClient = new QueryClient()
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Router>
+        <QueryParamProvider
+          adapter={QueryParamsAdapter}
+          options={{ removeDefaultsFromUrl: false }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <QueryClientProvider client={queryClient}>
+            <Header />
+
+            <Switch>
+              <Route path="/items" exact component={Items} />
+              <Route path="/items/:id" exact component={DetailedProduct} />
+              <Redirect from="/" to="/items" />
+            </Switch>
+          </QueryClientProvider>
+        </QueryParamProvider>
+      </Router>
+    </>
+  )
 }
 
-export default App;
+export default App
