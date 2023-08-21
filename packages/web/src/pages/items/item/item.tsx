@@ -27,6 +27,7 @@ export const Item = ({ item }: Props) => {
           <span>$ {Money.build(item.price.amount).getValue()}</span>
           {item.free_shipping && (
             <img
+              data-testid="item-free-shipping"
               className="item__free-shipping"
               src={freeShipping}
               alt="Free shipping"

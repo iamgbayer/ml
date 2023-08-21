@@ -10,6 +10,7 @@ const history = createBrowserHistory()
 
 export const setup = () => {
   return {
+    history,
     render: (children: any) =>
       render(children, {
         wrapper: (props) => (
