@@ -1,3 +1,5 @@
+@import './breakpoint.scss';
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,6 +14,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
 }
 
 :root {
@@ -21,5 +24,23 @@ body {
   --background-color: #f8f9fa;  /* Cor de fundo geral */
   --text-color: #343a40;        /* Cor de texto principal */
   --link-color: #3483fa;        /* Cor de links */
+}
+
+@include breakpoint('md') {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@include breakpoint('sm') {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@include breakpoint('xs') {
+  .container {
+    padding: 0 15px;
+  }
 }
 

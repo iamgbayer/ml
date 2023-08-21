@@ -1,69 +1,87 @@
+@import '../../breakpoint.scss';
+
 .detailed-product {
-    background-color: #fff;
-    margin-top: 100px;
-    padding: 25px;
-    border-radius: 4px;
+  background-color: #fff;
+  margin-top: 100px;
+  padding: 32px;
+  border-radius: 4px;
 }
 
 .detailed-product__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 32px;
 }
 
-.detailed-product__image img {
-    width: 100%;
-    max-width: 680px;
-    height: 100%;
-    object-fit: contain;
+.detailed-product__image {
+  width: 680px;
+  height: 100%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .detailed-product__info {
-    flex: 1;
+  flex: 1;
 }
 
 .detailed-product__title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 32px;
 }
 
 .detailed-product__details {
-    margin-bottom: 16px;
-    font-size: 14px;
+  margin-bottom: 16px;
+  font-size: 14px;
 }
 
 .detailed-product__description {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .detailed-product__description-title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
 .detailed-product__price {
-    font-size: 46px;
-    margin-bottom: 32px;
-    font-weight: 700;
+  font-size: 46px;
+  margin-bottom: 32px;
+  font-weight: 700;
 }
 
 .detailed-product__button {
-    width: 100%;
-    max-width: 220px;
-    height: 38px;
-    background-color: var(--link-color);
-    border: 1px solid var(--link-color);
-    color: #fff;
-    border-radius: 6px;
-    cursor: pointer;
+  width: 100%;
+  max-width: 220px;
+  height: 38px;
+  background-color: var(--link-color);
+  border: 1px solid var(--link-color);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
 
-    &:hover {
-        background-color: transparent;
-        color: var(--link-color);
-    }
+  &:hover {
+    background-color: transparent;
+    color: var(--link-color);
+  }
+}
+
+@include breakpoint('xs') {
+  .detailed-product__container {
+    flex-direction: column;
+  }
+
+  .detailed-product__info {
+    margin-top: 32px;
+  }
+
+  .detailed-product__button {
+    max-width: 100%;
+  }
 }

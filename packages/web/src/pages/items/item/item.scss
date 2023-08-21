@@ -1,27 +1,53 @@
+@import '../../../breakpoint.scss';
+
 .item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
 }
 
 .item__image {
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 4px;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
 }
 
 .item__info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .item__title {
-    margin-top: 12px;
+  margin-top: 12px;
+  display: block;
 }
 
 .item__free-shipping {
-    margin-left: 5px;
+  margin-left: 5px;
+}
+
+.item__separator {
+  margin: 15px 0;
+  background-color: #eee;
+  border: none;
+  width: 100%;
+  height: 1px;
+}
+
+@include breakpoint('xs') {
+  .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item__image {
+    margin-bottom: 16px;
+  }
+
+  .item__title {
+    text-align: center;
+  }
 }

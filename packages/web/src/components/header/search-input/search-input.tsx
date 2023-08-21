@@ -12,7 +12,7 @@ export const SearchInput = () => {
   const { refetch } = useGetItems()
   const history = useHistory()
 
-  const onSearch = () => {
+  const handleSearchClick = () => {
     refetch()
 
     const isAtDetailsPage = window.location.pathname.includes('/items/')
@@ -37,9 +37,9 @@ export const SearchInput = () => {
         type="submit"
         className="search__button"
         data-testid="search-button"
-        onClick={() => onSearch()}
+        onClick={handleSearchClick}
       >
-        <img src={search} alt="Search" />
+        <img src={search} className="search__button-icon" alt="Search" />
       </button>
     </div>
   )

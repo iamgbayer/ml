@@ -34,9 +34,9 @@ export const Item = ({ item }: Props) => {
           )}
         </div>
 
-        <span className="item__title" data-testid="item-title">
+        <strong className="item__title" data-testid="item-title">
           {item.title}
-        </span>
+        </strong>
       </div>
     </div>
   )

@@ -24,7 +24,13 @@ export const Items = () => {
 
       <div className="items">
         {data.items.map((item) => (
-          <Item item={item} key={item.id} />
+          <div key={item.id}>
+            <Item item={item} />
+
+            {item !== data.items[data.items.length - 1] && (
+              <hr className="item__separator" />
+            )}
+          </div>
         ))}
       </div>
     </div>

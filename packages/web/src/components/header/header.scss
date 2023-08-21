@@ -1,13 +1,18 @@
 .header {
-    width: 100%;
-    height: 60px;
-    background-color: var(--primary-color);
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary-color);
+}
+
+.header__logo {
+  cursor: pointer;
 }
 
 .header__content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
