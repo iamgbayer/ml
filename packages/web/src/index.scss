@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #eee;
+  background-color: var(--primary-background-color);
 }
 
 .container {
@@ -18,12 +18,11 @@ body {
 }
 
 :root {
-  --primary-color: #ffe600;     /* Uma cor primária geral */
-  --secondary-color: #6c757d;   /* Uma cor secundária geral */
-  --accent-color: #ffc107;      /* Uma cor de destaque ou de acentuação */
-  --background-color: #f8f9fa;  /* Cor de fundo geral */
-  --text-color: #343a40;        /* Cor de texto principal */
-  --link-color: #3483fa;        /* Cor de links */
+  --primary-color: #ffe600;
+  --primary-background-color: #eee;
+  --secondary-background-color: #fff;
+  --text-color: #343a40;
+  --link-color: #3483fa;
 }
 
 @include breakpoint('md') {
