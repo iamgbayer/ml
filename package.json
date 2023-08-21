@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "dependencies": {},
   "scripts": {
-    "start": "lerna run start",
+    "start": "lerna run start --parallel",
     "start:web": "yarn workspace @ml/web start",
     "build:web": "yarn workspace @ml/web build",
+    "e2e": "yarn workspace @ml/e2e start",
     "bootstrap": "lerna bootstrap"
   },
   "workspaces": [

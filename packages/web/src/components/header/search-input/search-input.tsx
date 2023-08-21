@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
-import search from '../../../assets/images/search.svg'
+import search from '../../../assets/ic_Search.png'
 import { useGetItems } from '../../../hooks/use-get-items'
 import './search-input.scss'
 
