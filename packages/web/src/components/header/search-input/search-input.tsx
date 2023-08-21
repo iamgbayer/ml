@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
-import search from '../../../assets/ic_Search.png'
 import { useGetItems } from '../../../hooks/use-get-items'
 import './search-input.scss'
 
@@ -8,6 +8,8 @@ export const SearchInput = () => {
   const [params, setParams] = useQueryParams({
     q: withDefault(StringParam, '')
   })
+
+  const [search, setSearch] = useState(params.q)
 
   const { refetch } = useGetItems()
   const history = useHistory()
@@ -22,6 +24,11 @@ export const SearchInput = () => {
     }
   }
 
+  useEffect(() => {
+    setParams({ q: search })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [search])
+
   return (
     <div className="search">
       <input
@@ -29,8 +36,8 @@ export const SearchInput = () => {
         placeholder="Search"
         className="search__input"
         data-testid="search-input"
-        defaultValue={params.q}
-        onChange={(event) => setParams({ q: event.target.value })}
+        value={search}
+        onChange={(event) => setSearch(event.target.value)}
       />
 
       <button

@@ -12,6 +12,6 @@ app.use(cors())
 app.use('/api/items/:id', getProduct)
 app.use('/api/items', getProducts)
 
-const port = process.env.PORT || '4000'
+const port = '4000'
 
 app.listen(port)

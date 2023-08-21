@@ -35,9 +35,18 @@ yarn start
 
 ## Testes unitários
 
+Para executar os testes unitários da aplicação frontend basta rodar o comando abaixo apartir da raiz do projeto:
+
+```bash
+yarn unit
+```
+
+
 ## Testes e2e
 Para executar os testes e2e basta executar o comando abaixo apartir da raiz do projeto:
 
 ```bash
 yarn e2e
 ```
+
+> Lembrando que para a correta execução dos testes e2e, é necessário que ambas aplicações estejam rodando.

@@ -8,6 +8,7 @@
     "start:web": "yarn workspace @ml/web start",
     "build:web": "yarn workspace @ml/web build",
     "e2e": "yarn workspace @ml/e2e start",
+    "unit": "yarn workspace @ml/web test --watchAll=false --coverage=true",
     "bootstrap": "lerna bootstrap"
   },
   "workspaces": [
