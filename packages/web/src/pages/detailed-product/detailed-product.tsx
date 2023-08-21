@@ -55,7 +55,9 @@ export const DetailedProduct = () => {
           </div>
 
           <div className="detailed-product__description">
-            <h2>Descripción del producto</h2>
+            <h2 className="detailed-product__description-title">
+              Descripción del producto
+            </h2>
             <p>{data.item.description}</p>
           </div>
         </div>

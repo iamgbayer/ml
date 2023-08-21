@@ -1,11 +1,10 @@
 import { useHistory } from 'react-router-dom'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
-import logo from '../../assets/Logo_ML.png'
-import search from '../../assets/ic_Search.png'
-import { useGetItems } from '../../hooks/use-get-items'
-import './header.scss'
+import search from '../../../assets/images/search.svg'
+import { useGetItems } from '../../../hooks/use-get-items'
+import './search-input.scss'
 
-const SearchInput = () => {
+export const SearchInput = () => {
   const [params, setParams] = useQueryParams({
     q: withDefault(StringParam, '')
   })
@@ -42,20 +41,6 @@ const SearchInput = () => {
       >
         <img src={search} alt="Search" />
       </button>
-    </div>
-  )
-}
-
-export const Header = () => {
-  return (
-    <div className="header">
-      <div className="container">
-        <div className="header__content">
-          <img src={logo} alt="Mercado Livre" />
-
-          <SearchInput />
-        </div>
-      </div>
     </div>
   )
 }
