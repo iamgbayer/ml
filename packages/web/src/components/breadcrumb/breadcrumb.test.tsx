@@ -11,9 +11,13 @@ test('renders breadcrumb with categories', () => {
 })
 
 test('renders correct number of separators', () => {
+  // Arrange
   const categories = ['Home', 'Products', 'Electronics', 'Smartphones']
+
+  // Act
   render(<Breadcrumb categories={categories} />)
 
+  // Assert
   const separatorCount = categories.length - 1
   expect(screen.getAllByTestId('separator')).toHaveLength(separatorCount)
 })

@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
-import { useGetItem } from '../../hooks/use-get-item'
+import { useGetDetailedProduct } from '../../hooks/use-get-detailed-product'
 import { Money } from '../../vos/money'
 import './detailed-product.scss'
 
 export const DetailedProduct = () => {
   const params = useParams<{ id: string }>()
-  const { data, isFetching, error } = useGetItem(params.id)
+  const { data, isFetching, error } = useGetDetailedProduct(params.id)
 
   if (isFetching) {
     return <>Carregando</>
@@ -35,7 +35,10 @@ export const DetailedProduct = () => {
 
             <div className="detailed-product__info">
               <h2 className="detailed-product__details">
-                {conditionText} - {soldQuantityText}
+                <span data-testid="detailed-product-condition">
+                  {conditionText}
+                </span>{' '}
+                - {soldQuantityText}
               </h2>
               <h1
                 className="detailed-product__title"
@@ -44,7 +47,10 @@ export const DetailedProduct = () => {
                 {data.item.title}
               </h1>
 
-              <h3 className="detailed-product__price">
+              <h3
+                className="detailed-product__price"
+                data-testid="detailed-product-price"
+              >
                 $ {Money.build(data.item.price.amount).getValue()}
               </h3>
 
