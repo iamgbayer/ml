@@ -15,7 +15,8 @@ export const SearchInput = () => {
   const { refetch } = useGetItems()
   const history = useHistory()
 
-  const handleSearchClick = () => {
+  const handleSearchClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
     refetch()
 
     const isAtDetailsPage = window.location.pathname.includes('/items/')
@@ -31,7 +32,7 @@ export const SearchInput = () => {
   }, [search])
 
   return (
-    <div className="search">
+    <form className="search">
       <input
         type="text"
         placeholder="Search"
@@ -49,6 +50,6 @@ export const SearchInput = () => {
       >
         <img src={lens} className="search__button-icon" alt="Search" />
       </button>
-    </div>
+    </form>
   )
 }
