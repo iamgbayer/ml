@@ -6,7 +6,6 @@ import {
   Switch
 } from 'react-router-dom'
 import { QueryParamProvider } from 'use-query-params'
-import './App.css'
 import { Header } from './components/header/header'
 import { QueryParamsAdapter } from './components/query-params-adapter/query-params-adapter'
 import { DetailedProduct } from './pages/detailed-product/detailed-product'

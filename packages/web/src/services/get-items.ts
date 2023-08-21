@@ -5,7 +5,7 @@ export class GetItems {
   public async execute(text: string): Promise<GetProductsOutput> {
     try {
       const response = await axios.get<GetProductsOutput>(
-        `http://localhost:4000/api/items?q=${text}`
+        `${process.env['REACT_APP_API_URL']}/items?q=${text}`
       )
 
       return response.data

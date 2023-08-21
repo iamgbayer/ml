@@ -1,4 +1,3 @@
-/* eslint-disable testing-library/no-debugging-utils */
 import { screen } from '@testing-library/react'
 import { mockDetailedProduct } from '../../mocks/detailed-product'
 import { GetDetailedProduct } from '../../services/get-detailed-product'

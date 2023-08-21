@@ -5,7 +5,7 @@ export class GetDetailedProduct {
   public async execute(id: string): Promise<GetDetailedProductOutput> {
     try {
       const response = await axios.get<GetDetailedProductOutput>(
-        `http://localhost:4000/api/items/${id}`
+        `${process.env['REACT_APP_API_URL']}/items/${id}`
       )
 
       return response.data

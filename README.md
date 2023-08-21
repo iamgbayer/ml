@@ -24,7 +24,7 @@ Node.js instalado na versão especificada no arquivo `package.json`.
 yarn
 ```
 
-2. Crie o arquivo `.env` na raiz do diretório (por questões de economizar tempo dessa aplicação demo, copie o arquivo `.env.example`)
+2. Copie o arquivo `.env.example` e renomeie o mesmo para `.env` no diretório `packages/web`
 
 ## Desenvolvimento
 Você pode executar ambas aplicações executando o comando abaixo apartir da raiz do projeto:
