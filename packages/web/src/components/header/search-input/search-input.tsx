@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { StringParam, useQueryParams, withDefault } from 'use-query-params'
+import lens from '../../../assets/ic_Search.png'
 import { useGetItems } from '../../../hooks/use-get-items'
 import './search-input.scss'
 
@@ -46,7 +47,7 @@ export const SearchInput = () => {
         data-testid="search-button"
         onClick={handleSearchClick}
       >
-        <img src={search} className="search__button-icon" alt="Search" />
+        <img src={lens} className="search__button-icon" alt="Search" />
       </button>
     </div>
   )
